@@ -1,0 +1,191 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Console.WriteLine(Figures.Five);
+            //Console.WriteLine((int)Figures.Five);
+            //Days day = Days.Fri;
+            //Console.WriteLine(day);
+            //Console.Write((byte)day);
+            //Day(Days.Fri);
+            //for (Figures n = Figures.Zero; n <= Figures.Nine; n++)
+            //    Console.WriteLine("Elem \"{0}\"\t, values {1}", n, (int)n);
+            //
+            //byte n;
+            //n = Convert.ToByte(Console.ReadLine());
+            //for (Months i = Months.Jan; i <= Months.Dec; i++)
+            //    if ((byte)i == n)
+            //    {
+            //        select(i);
+            //    }
+            //
+            //Console.WriteLine("days value:");
+            //foreach (byte i in Enum.GetValues(typeof(Days)))
+            //    Console.WriteLine(i);
+            //Console.WriteLine("name of days:");
+            //foreach (string str in Enum.GetNames(typeof(Days)))
+            //    Console.WriteLine(str);
+            //
+            //byte n;
+            //bool flag = false;
+            //n = Convert.ToByte(Console.ReadLine());
+            //foreach (byte i in Enum.GetValues(typeof(Days)))
+            //    if (i == n)
+            //    {
+            //        Console.WriteLine("OK");
+            //        flag = true;
+            //        break;
+            //    }
+            //if(!flag)    
+            //    Console.WriteLine("Error");
+            //
+            //MyDays NonWorking = MyDays.Вторник | MyDays.Четверг;
+            //Console.WriteLine("Nonworking: {0}", NonWorking);
+            //NonWorking = NonWorking | MyDays.Пятница;
+            //Console.WriteLine("Nonworking: {0}", NonWorking);
+            //NonWorking = NonWorking ^ MyDays.Вторник;
+            //Console.WriteLine("Nonworking: {0}", NonWorking);
+            //MyDays TestDay = MyDays.Воскресенье;
+            //bool test = (NonWorking & TestDay) == TestDay;
+            //Console.WriteLine("{0} - {1} nonworking", TestDay, test == true ? "is" : "is not");
+            //
+            //Tuple<int, string> t1 = new Tuple<int, string>(123, "Hello");
+            //var t2 = new Tuple<int, string>(123, "Hello");
+            //Tuple<int, string> t3 = Tuple.Create(123, "Hello");
+            //var t4 = Tuple.Create(123, "Hello");
+            //Console.WriteLine(t1.Item1 * 2);
+            //Console.WriteLine(t2.Item2.ToUpper());
+            //Console.WriteLine(t3 == t4);
+            //Console.WriteLine(t3.Equals(t4));
+            //
+            //string s1, s2;
+            //s1 = Console.ReadLine();
+            //s2 = Console.ReadLine();
+            //var human = Tuple.Create(s1, s2);
+            //Console.WriteLine(human);
+            //
+            string str1 = "Это - строка";
+            Console.WriteLine("str1: " + str1);
+            char[] symarr = { 'Э', 'т', 'о', ' ', '-', ' ', 'п', 'р', 'и', 'м', 'е', 'р' };
+            string str2 = new string(symarr);
+            Console.WriteLine("str2: " + str2);
+            string str3 = null;
+            Console.WriteLine("str3: " + str3);
+            string str32 = String.Empty;                    // Равнозначно ""
+            Console.WriteLine("str32: " + str32);
+            int j = 9;
+            Console.WriteLine("Длина строки str2 - {0}, её {1}-й символ - '{2}'",
+                str2.Length, j, str2[j - 1]);
+        /*                                                                                                                                                                                                                         
+                 0000000000    0       0    0   0   0   000000000  000000    000000   0000000  000000    000000   0      0  0      0  0     00   000000  00000000000                                                                                                                        
+                     00        0       0     0  0  0    0       0  0     0  0      0  0        0     0  0      0  00    00  00    00  0    0 0  0            00                                                                                            
+                     00        00000   0      00000     0       0  0     0  0      0  0        0     0  0      0  0 0  0 0  0 0  0 0  0   0  0  0            00                                                                                                   
+                     00        0    0  0     0  0  0    0       0  000000   0      0  0        000000   00000000  0  00  0  0  00  0  0  0   0  0            00                                                                                                      
+                     00        0    0  0    0   0   0   0       0  0        0      0  0        0        0      0  0      0  0      0  0 0    0  0            00                                                                                       
+                     00        00000   0   0    0    0  0       0  0         000000   0        0        0      0  0      0  0      0  00     0   000000      00                                                                                                  
+        */                                                                                                                                                                                                                        
+            str1 = "Hello";
+            str2 = "World";
+            str3 = "Hello";
+            Console.WriteLine(String.Compare(str1, str2));  // Порядок следования при сортировке (сравнить другие пары)
+            Console.WriteLine(str1.CompareTo(str2));        // То же
+            Console.WriteLine(str1.Equals(str2));           // Равенство значений
+            string str123 = String.Concat(str1, ", ", str2, "! ", str3, ".");
+            Console.WriteLine(str123);
+            Console.WriteLine("o: " + str123.Contains("o"));  // А также: StartsWith(), EndsWith()
+            Console.WriteLine("o: " + str123.IndexOf("o"));
+            Console.WriteLine("o: " + str123.LastIndexOf("o"));
+            char[] myCh = { 'h', 'w', '-' };                // А если добавить в массив 'o' или 'l'
+            Console.WriteLine("myCh: " + str123.LastIndexOfAny(myCh));
+            string[] strarr = str123.Split();   // А если разделитель 'o' или 'l'
+            foreach (string ae in strarr)
+                Console.WriteLine(ae);
+            str123 = String.Join("_", strarr);
+            Console.WriteLine(str123);
+            Console.WriteLine(str123.PadLeft(30));
+            Console.WriteLine(str123.Trim());
+            Console.WriteLine(str123.PadRight(30, '*'));
+            Console.WriteLine(str123.Trim('*'));
+            str123 = str123.Insert(0, "*****");
+            Console.WriteLine(str123);
+            str123 = str123.Remove(0, 5);
+            Console.WriteLine(str123);
+            str123 = str123.Replace('_', ' ');
+            Console.WriteLine(str123);
+            Console.WriteLine(str123.ToUpper());
+            Console.WriteLine(str123.ToLower());
+            Console.WriteLine(str123.Substring(7, 5));
+            symarr = str123.ToCharArray();
+            Console.WriteLine("Длина: " + symarr.Length);
+            Console.WriteLine("Первый: " + symarr.First());
+            Console.WriteLine("Макс: " + symarr.Max());
+            string s1 = "Hello ";
+            string s2 = s1;
+            s1 += "World";
+            Console.WriteLine(s2);
+            //
+            //StringBuilder str4 = new StringBuilder("Hello, ", 20);
+            //Console.WriteLine(str4);
+            //str4.Append("Visual Studio!");
+            //Console.WriteLine(str4);
+            //for (int i = 'я'; i >= 'A'; i--)
+            //    str4 = str4.Replace((char)i, (char)(i + 3));
+            //Console.WriteLine(str4);
+            //StringBuilder sb = new StringBuilder();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    sb.Append(i.ToString());    // Рассмотрите другие свойства и методы класса StringBuilder
+            //}
+            //Console.WriteLine(sb);
+            //sb[0] = sb[9];                  // А если то же самое для s1?
+            //Console.WriteLine(sb);
+            //
+            Console.ReadKey();
+        }
+
+        private static void select(Months i)
+        {
+            Console.WriteLine(i);
+            if ((byte)i < 8)
+                if ((byte)i % 2 != 0)
+                    Console.WriteLine("\n31 days");
+                else if((byte)i==2)
+                    Console.WriteLine("\n28 or 29 days");
+                else
+                    Console.WriteLine("\n30 days");
+            else
+                if((byte)i%2==0)
+                    Console.WriteLine("\n31 days");
+                else
+                    Console.WriteLine("\n30 days");
+        }
+
+        private static void Day(Days day)
+        {
+            switch(day)
+            {
+                case Days.Fri:
+                    Console.Write("\tfriday");
+                    break;
+                default:
+                    Console.Write("\tnot friday");
+                    break;
+
+            }
+        }
+
+        enum Figures { Zero, One, Two, Four = 4, Five = 5, Nine = 9}
+        enum Days : byte { Sun, Mon, Tue, Wed, Thu, Fri, Sat}
+        enum Months : byte { Jan = 1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec}
+        [Flags] enum MyDays { Нет = 0x0, Воскресенье = 0x1, Понедельник = 0x2, Вторник = 0x4, Среда = 0x8, Четверг = 0x10, Пятница = 0x20, Суббота = 0x40}
+        
+    }
+}
